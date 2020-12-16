@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/gfx/lightmaps/torchmap.png" type="Texture" id=1]
+
+[node name="Flashlight" type="Light2D" groups=[
+"lights",
+]]
+texture = ExtResource( 1 )
+offset = Vector2( 320, 0 )
+shadow_enabled = true
+shadow_color = Color( 0.0862745, 0.0862745, 0.0862745, 0 )

@@ -1,0 +1,165 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/gfx/tilesets/tileset-level-1.tres" type="TileSet" id=2]
+[ext_resource path="res://src/items/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/gfx/lightmaps/torchmap.png" type="Texture" id=4]
+[ext_resource path="res://src/loot/Briefcase.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/gfx/ui/crosshairs/crossair-blue-outline.png" type="Texture" id=6]
+[ext_resource path="res://src/levels/Tutorial.gd" type="Script" id=7]
+[ext_resource path="res://assets/sfx/message.ogg" type="AudioStream" id=8]
+[ext_resource path="res://src/ui/Message.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 48 )
+
+[node name="Tutorial" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
+
+[node name="VisionMode" parent="." index="0"]
+color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+
+[node name="Floor" parent="TileMaps/Navigation2D" index="0"]
+tile_set = ExtResource( 2 )
+tile_data = PoolIntArray( -393204, 1, 7, -393203, 1, 262149, -393202, 1, 2, -393201, 1, 2, -393200, 1, 2, -393199, 1, 2, -393198, 1, 2, -393197, 1, 3, -393196, 1, 2, -393195, 1, 2, -393194, 1, 2, -393193, 1, 2, -393192, 1, 2, -393191, 1, 262148, -393190, 1, 8, -327668, 1, 327682, -327667, 1, 65544, -327666, 3, 1, -327665, 3, 1, -327664, 3, 1, -327663, 3, 1, -327662, 3, 1, -327661, 1, 65538, -327660, 3, 1, -327659, 3, 1, -327658, 3, 1, -327657, 3, 1, -327656, 3, 1, -327655, 1, 65543, -327654, 1, 327683, -262132, 1, 65538, -262131, 3, 1, -262130, 3, 1, -262129, 3, 1, -262128, 3, 5, -262127, 3, 1, -262126, 3, 1, -262125, 1, 65538, -262124, 3, 1, -262123, 3, 1, -262122, 3, 3, -262121, 3, 3, -262120, 3, 1, -262119, 3, 1, -262118, 1, 65538, -131076, 1, 7, -131075, 1, 262149, -131074, 1, 2, -131073, 1, 2, -196608, 1, 2, -196607, 1, 2, -196606, 1, 2, -196605, 1, 2, -196604, 1, 2, -196603, 1, 2, -196602, 1, 2, -196601, 1, 2, -196600, 1, 262148, -196599, 1, 196612, -196598, 1, 196612, -196597, 1, 196612, -196596, 1, 262147, -196595, 3, 1, -196594, 3, 1, -196593, 3, 1, -196592, 3, 1, -196591, 3, 1, -196590, 3, 1, -196589, 1, 65538, -196588, 3, 1, -196587, 3, 1, -196586, 3, 1, -196585, 3, 1, -196584, 3, 5, -196583, 3, 1, -196582, 1, 65538, -65540, 1, 327682, -65539, 1, 65544, -65538, 2, 0, -65537, 2, 0, -131072, 2, 0, -131071, 2, 0, -131070, 2, 0, -131069, 2, 0, -131068, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 1, 65543, -131063, 1, 131073, -131062, 1, 131078, -131061, 1, 131078, -131060, 1, 131077, -131059, 3, 1, -131058, 3, 3, -131057, 3, 1, -131056, 1, 0, -131055, 1, 5, -131054, 3, 1, -131053, 1, 65538, -131052, 3, 1, -131051, 1, 65542, -131050, 1, 1, -131049, 3, 1, -131048, 3, 5, -131047, 3, 1, -131046, 1, 65538, -4, 1, 65538, -3, 2, 0, -2, 2, 0, -1, 2, 0, -65536, 2, 2, -65535, 2, 0, -65534, 2, 0, -65533, 2, 4, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 1, 131076, -65526, 1, 131078, -65525, 1, 131078, -65524, 1, 131077, -65523, 3, 1, -65522, 3, 1, -65521, 3, 1, -65520, 1, 65538, -65519, 3, 1, -65518, 3, 1, -65517, 1, 65538, -65516, 3, 1, -65515, 3, 1, -65514, 1, 65538, -65513, 3, 1, -65512, 3, 5, -65511, 3, 1, -65510, 1, 65538, 65532, 1, 65538, 65533, 2, 0, 65534, 2, 0, 65535, 2, 4, 0, 2, 4, 1, 2, 2, 2, 2, 4, 3, 2, 0, 4, 2, 0, 5, 2, 4, 6, 2, 4, 7, 2, 0, 8, 2, 0, 9, 1, 131076, 10, 1, 131078, 11, 1, 131078, 12, 1, 131077, 13, 3, 1, 14, 3, 1, 15, 3, 1, 16, 1, 65538, 17, 3, 1, 18, 3, 1, 19, 1, 6, 20, 3, 1, 21, 3, 1, 22, 1, 65538, 23, 3, 1, 24, 3, 1, 25, 3, 1, 26, 1, 65538, 131068, 1, 65538, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 2, 65537, 2, 0, 65538, 2, 2, 65539, 2, 0, 65540, 2, 0, 65541, 2, 2, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 1, 65543, 65546, 1, 196613, 65547, 1, 196613, 65548, 1, 65544, 65549, 3, 1, 65550, 3, 1, 65551, 3, 1, 65552, 1, 65538, 65553, 3, 1, 65554, 3, 1, 65555, 3, 1, 65556, 3, 1, 65557, 3, 1, 65558, 1, 65538, 65559, 3, 1, 65560, 3, 1, 65561, 3, 1, 65562, 1, 65538, 196604, 1, 65538, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 2, 131073, 2, 2, 131074, 2, 4, 131075, 2, 2, 131076, 2, 2, 131077, 2, 4, 131078, 2, 0, 131079, 2, 2, 131080, 2, 0, 131081, 2, 0, 131082, 3, 1, 131083, 3, 1, 131084, 3, 1, 131085, 3, 1, 131086, 3, 1, 131087, 3, 1, 131088, 1, 65538, 131089, 3, 1, 131090, 3, 1, 131091, 3, 1, 131092, 3, 1, 131093, 3, 1, 131094, 1, 65538, 131095, 3, 1, 131096, 3, 5, 131097, 3, 1, 131098, 1, 65538, 262140, 1, 65538, 262141, 2, 0, 262142, 2, 2, 262143, 2, 0, 196608, 2, 0, 196609, 2, 2, 196610, 2, 2, 196611, 2, 4, 196612, 2, 0, 196613, 2, 2, 196614, 2, 4, 196615, 2, 2, 196616, 2, 0, 196617, 1, 7, 196618, 1, 196612, 196619, 1, 196612, 196620, 1, 8, 196621, 3, 1, 196622, 3, 1, 196623, 3, 1, 196624, 1, 65538, 196625, 3, 1, 196626, 3, 1, 196627, 1, 65541, 196628, 3, 1, 196629, 3, 1, 196630, 1, 65538, 196631, 3, 1, 196632, 3, 1, 196633, 3, 1, 196634, 1, 65538, 327676, 1, 65538, 327677, 2, 0, 327678, 2, 0, 327679, 2, 2, 262144, 2, 4, 262145, 2, 0, 262146, 2, 2, 262147, 2, 0, 262148, 2, 4, 262149, 2, 0, 262150, 2, 4, 262151, 2, 0, 262152, 2, 0, 262153, 1, 131076, 262154, 1, 131078, 262155, 1, 131078, 262156, 1, 196610, 262157, 1, 2, 262158, 1, 2, 262159, 1, 2, 262160, 1, 4, 262161, 1, 2, 262162, 1, 2, 262163, 1, 4, 262164, 1, 2, 262165, 1, 2, 262166, 1, 4, 262167, 1, 2, 262168, 1, 5, 262169, 3, 1, 262170, 1, 65538, 393212, 1, 65538, 393213, 2, 0, 393214, 2, 0, 393215, 2, 2, 327680, 2, 2, 327681, 2, 2, 327682, 2, 4, 327683, 2, 0, 327684, 2, 2, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 1, 131076, 327690, 1, 131078, 327691, 1, 131078, 327692, 1, 131077, 327693, 2, 0, 327694, 2, 0, 327695, 2, 0, 327696, 2, 0, 327697, 2, 0, 327698, 2, 0, 327699, 2, 0, 327700, 2, 0, 327701, 2, 0, 327702, 2, 0, 327703, 2, 0, 327704, 2, 0, 327705, 2, 0, 327706, 1, 65538, 458748, 1, 262146, 458749, 1, 8, 458750, 2, 0, 458751, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 1, 7, 393225, 1, 196609, 393226, 1, 131078, 393227, 1, 131078, 393228, 1, 131077, 393229, 2, 0, 393230, 2, 0, 393231, 2, 0, 393232, 2, 0, 393233, 2, 0, 393234, 2, 0, 393235, 2, 2, 393236, 2, 0, 393237, 2, 0, 393238, 2, 2, 393239, 2, 4, 393240, 2, 2, 393241, 2, 0, 393242, 1, 65538, 524284, 1, 65543, 524285, 1, 327685, 524286, 1, 2, 524287, 1, 2, 458752, 1, 2, 458753, 1, 2, 458754, 1, 2, 458755, 1, 2, 458756, 1, 2, 458757, 1, 2, 458758, 1, 2, 458759, 1, 2, 458760, 1, 327684, 458761, 1, 196613, 458762, 1, 196613, 458763, 1, 196613, 458764, 1, 327683, 458765, 2, 0, 458766, 2, 0, 458767, 2, 4, 458768, 2, 0, 458769, 2, 0, 458770, 2, 4, 458771, 2, 0, 458772, 2, 0, 458773, 2, 0, 458774, 2, 0, 458775, 2, 0, 458776, 2, 4, 458777, 2, 0, 458778, 1, 65538, 524300, 1, 65538, 524301, 2, 0, 524302, 2, 0, 524303, 2, 0, 524304, 2, 0, 524305, 2, 4, 524306, 2, 0, 524307, 2, 2, 524308, 2, 0, 524309, 2, 4, 524310, 2, 2, 524311, 2, 0, 524312, 2, 0, 524313, 2, 0, 524314, 1, 65538, 589836, 1, 65538, 589837, 2, 0, 589838, 2, 2, 589839, 2, 0, 589840, 2, 0, 589841, 2, 4, 589842, 2, 0, 589843, 2, 0, 589844, 2, 2, 589845, 2, 4, 589846, 2, 4, 589847, 2, 0, 589848, 2, 4, 589849, 2, 0, 589850, 1, 65538, 655372, 1, 65538, 655373, 2, 0, 655374, 2, 4, 655375, 2, 0, 655376, 2, 4, 655377, 2, 0, 655378, 2, 0, 655379, 2, 2, 655380, 2, 4, 655381, 2, 2, 655382, 2, 0, 655383, 2, 0, 655384, 2, 0, 655385, 2, 0, 655386, 1, 65538, 720908, 1, 65538, 720909, 2, 0, 720910, 2, 4, 720911, 2, 0, 720912, 2, 0, 720913, 2, 4, 720914, 2, 2, 720915, 2, 4, 720916, 2, 4, 720917, 2, 0, 720918, 2, 0, 720919, 2, 2, 720920, 2, 0, 720921, 2, 0, 720922, 1, 65538, 786444, 1, 65538, 786445, 2, 0, 786446, 2, 0, 786447, 2, 0, 786448, 2, 0, 786449, 2, 0, 786450, 2, 0, 786451, 2, 2, 786452, 2, 2, 786453, 2, 2, 786454, 2, 0, 786455, 2, 0, 786456, 2, 0, 786457, 2, 0, 786458, 1, 65538, 851980, 1, 65538, 851981, 2, 0, 851982, 2, 0, 851983, 2, 4, 851984, 2, 0, 851985, 2, 0, 851986, 2, 2, 851987, 2, 4, 851988, 2, 0, 851989, 2, 0, 851990, 2, 2, 851991, 2, 4, 851992, 2, 0, 851993, 2, 0, 851994, 1, 65538, 917516, 1, 262146, 917517, 1, 8, 917518, 2, 0, 917519, 2, 0, 917520, 2, 0, 917521, 2, 0, 917522, 2, 0, 917523, 2, 0, 917524, 2, 0, 917525, 2, 0, 917526, 2, 0, 917527, 2, 0, 917528, 2, 0, 917529, 1, 7, 917530, 1, 262147, 983052, 1, 65543, 983053, 1, 327685, 983054, 1, 2, 983055, 1, 2, 983056, 1, 2, 983057, 1, 2, 983058, 1, 2, 983059, 1, 2, 983060, 1, 2, 983061, 1, 2, 983062, 1, 2, 983063, 1, 2, 983064, 1, 2, 983065, 1, 327684, 983066, 1, 65544 )
+
+[node name="Exit" parent="." index="3"]
+position = Vector2( 1396.5, 854.883 )
+
+[node name="Door" parent="Doors/Unlocked" index="0" instance=ExtResource( 3 )]
+position = Vector2( 783.945, 160.037 )
+rotation = 1.5708
+
+[node name="Briefcase" parent="Loot" index="0" instance=ExtResource( 5 )]
+position = Vector2( 1054.42, 579.312 )
+
+[node name="Lights" type="Node" parent="." index="8"]
+
+[node name="Light0" type="Light2D" parent="Lights" index="0"]
+position = Vector2( -103.402, -53.4328 )
+rotation = 0.597385
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+offset = Vector2( 320, 0 )
+energy = 0.7
+shadow_enabled = true
+
+[node name="Light1" type="Light2D" parent="Lights" index="1"]
+position = Vector2( -96.5368, 354.391 )
+rotation = -0.518726
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+offset = Vector2( 320, 0 )
+energy = 0.7
+shadow_enabled = true
+
+[node name="Light2" type="Light2D" parent="Lights" index="2"]
+position = Vector2( 897.345, 869.87 )
+rotation = -1.02369
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+offset = Vector2( 320, 0 )
+energy = 0.7
+shadow_enabled = true
+
+[node name="Objectives" type="Node" parent="." index="9"]
+
+[node name="ObjAreas" type="Node" parent="Objectives" index="0"]
+
+[node name="MoveObj" type="Area2D" parent="Objectives/ObjAreas" index="0"]
+position = Vector2( 575.877, 159.346 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectives/ObjAreas/MoveObj" index="0"]
+shape = SubResource( 1 )
+
+[node name="DoorObj" type="Area2D" parent="Objectives/ObjAreas" index="1"]
+position = Vector2( 849.647, 153.729 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectives/ObjAreas/DoorObj" index="0"]
+shape = SubResource( 1 )
+
+[node name="NightvisionObj" type="Area2D" parent="Objectives/ObjAreas" index="2"]
+position = Vector2( 1618.92, 274.058 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectives/ObjAreas/NightvisionObj" index="0"]
+shape = SubResource( 1 )
+
+[node name="BriefcaseObj" type="Area2D" parent="Objectives/ObjAreas" index="3"]
+position = Vector2( 1054.83, 577.689 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objectives/ObjAreas/BriefcaseObj" index="0"]
+shape = SubResource( 1 )
+
+[node name="ObjPositions" type="Node" parent="Objectives" index="1"]
+
+[node name="MoveObj" type="Position2D" parent="Objectives/ObjPositions" index="0"]
+position = Vector2( 551.283, 160.476 )
+
+[node name="DoorObj" type="Position2D" parent="Objectives/ObjPositions" index="1"]
+position = Vector2( 820.316, 161.42 )
+
+[node name="NightvisionObj" type="Position2D" parent="Objectives/ObjPositions" index="2"]
+position = Vector2( 1623.07, 239.204 )
+
+[node name="BriefcaseObj" type="Position2D" parent="Objectives/ObjPositions" index="3"]
+position = Vector2( 1072.36, 553.926 )
+
+[node name="ExitObj" type="Position2D" parent="Objectives/ObjPositions" index="4"]
+position = Vector2( 1492.43, 872.99 )
+
+[node name="ObjMsgs" type="Node" parent="Objectives" index="2"]
+
+[node name="WelcomeMsg" parent="Objectives/ObjMsgs" index="0" instance=ExtResource( 9 )]
+message = "Welcome to your first day of training, Heist Meister. Please move to the next objective marker. Use the [W] [A] [S] [D] keys to move."
+
+[node name="DoorMsg" parent="Objectives/ObjMsgs" index="1" instance=ExtResource( 9 )]
+message = "Excellent.  Next, we'll practice interacting with objects.Open the door ahead of you by clicking on it with the mouse.  Remember that you'll need to be close enough to touch it."
+
+[node name="NightvisionMsg" parent="Objectives/ObjMsgs" index="2" instance=ExtResource( 9 )]
+message = "We've turned out the lights because you'll be working in the dark a lot.  We've given you a T.O.U.C.A.N. night vision set. Cycle through your vision modes by pressing [SPACE].  Head to the next objective in T.O.U.C.A.N. mode."
+
+[node name="BriefcaseMsg" parent="Objectives/ObjMsgs" index="3" instance=ExtResource( 9 )]
+message = "The loot is ahead in that briefcase.  Pick it up by walking over it."
+
+[node name="ExitMsg" parent="Objectives/ObjMsgs" index="4" instance=ExtResource( 9 )]
+message = "Head to the choppah! Sorry, got carried away. The exit is now unlocked.  Head to it at your convenience."
+
+[node name="ObjPointer" type="Sprite" parent="Objectives" index="3"]
+position = Vector2( 184.739, 162.108 )
+z_index = 2
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light2D" type="Light2D" parent="Objectives/ObjPointer" index="0"]
+texture = ExtResource( 6 )
+
+[node name="Tween" type="Tween" parent="Objectives" index="4"]
+
+[node name="ObjPointerSFX" type="AudioStreamPlayer" parent="Objectives" index="5"]
+stream = ExtResource( 8 )
+volume_db = -10.0
+
+[node name="Player" parent="." index="11"]
+position = Vector2( 128, 158.558 )
+[connection signal="body_entered" from="Objectives/ObjAreas/MoveObj" to="." method="_on_MoveObj_body_entered"]
+[connection signal="body_entered" from="Objectives/ObjAreas/DoorObj" to="." method="_on_DoorObj_body_entered"]
+[connection signal="body_entered" from="Objectives/ObjAreas/NightvisionObj" to="." method="_on_NightvisionObj_body_entered"]
+[connection signal="body_entered" from="Objectives/ObjAreas/BriefcaseObj" to="." method="_on_BriefcaseObj_body_entered"]

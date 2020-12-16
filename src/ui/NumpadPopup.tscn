@@ -1,0 +1,217 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/ui/NumpadPopup.gd" type="Script" id=1]
+[ext_resource path="res://assets/gfx/ui/dots/dot-red.png" type="Texture" id=2]
+[ext_resource path="res://assets/gfx/ui/panels/metal-panel.png" type="Texture" id=3]
+[ext_resource path="res://assets/gfx/ui/panels/metal-panel-yellow-corner.png" type="Texture" id=4]
+[ext_resource path="res://assets/gfx/ui/panels/metal-panel-red-corner.png" type="Texture" id=5]
+[ext_resource path="res://assets/sfx/two-tone.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/gfx/ui/panels/glass-panel.png" type="Texture" id=7]
+[ext_resource path="res://assets/themes/theme-numpad.tres" type="Theme" id=8]
+[ext_resource path="res://assets/gfx/ui/panels/metal-panel-blue-corner.png" type="Texture" id=9]
+[ext_resource path="res://assets/sfx/three-tone.ogg" type="AudioStream" id=10]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 100, 100 )
+
+[node name="NumpadPopup" type="Popup"]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -984.0
+margin_bottom = -560.0
+rect_min_size = Vector2( 300, 400 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 8 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 300, 400 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 3 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 284.0
+margin_bottom = 384.0
+custom_constants/separation = 48
+
+[node name="Display" type="CenterContainer" parent="Margin/VBox"]
+margin_right = 268.0
+margin_bottom = 100.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Margin/VBox/Display"]
+margin_left = 9.0
+margin_right = 259.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 250, 100 )
+texture = ExtResource( 7 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="DisplayLabel" type="Label" parent="Margin/VBox/Display"]
+margin_left = 94.0
+margin_top = 36.0
+margin_right = 174.0
+margin_bottom = 63.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Test"
+align = 1
+
+[node name="Buttons" type="CenterContainer" parent="Margin/VBox"]
+margin_top = 148.0
+margin_right = 268.0
+margin_bottom = 344.0
+
+[node name="Grid" type="GridContainer" parent="Margin/VBox/Buttons"]
+margin_left = 58.0
+margin_right = 210.0
+margin_bottom = 196.0
+custom_constants/vseparation = 12
+custom_constants/hseparation = 16
+columns = 3
+
+[node name="Button1" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+text = "1"
+
+[node name="Button2" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_left = 56.0
+margin_right = 96.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+text = "2"
+
+[node name="Button3" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_left = 112.0
+margin_right = 152.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+text = "3"
+
+[node name="Button4" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_top = 52.0
+margin_right = 40.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 40, 40 )
+text = "4"
+
+[node name="Button5" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_left = 56.0
+margin_top = 52.0
+margin_right = 96.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 40, 40 )
+text = "5"
+
+[node name="Button6" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_left = 112.0
+margin_top = 52.0
+margin_right = 152.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 40, 40 )
+text = "6"
+
+[node name="Button7" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_top = 104.0
+margin_right = 40.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 40, 40 )
+text = "7"
+
+[node name="Button8" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_left = 56.0
+margin_top = 104.0
+margin_right = 96.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 40, 40 )
+text = "8"
+
+[node name="Button9" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_left = 112.0
+margin_top = 104.0
+margin_right = 152.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 40, 40 )
+text = "9"
+
+[node name="StatusLight" type="TextureRect" parent="Margin/VBox/Buttons/Grid"]
+margin_top = 156.0
+margin_right = 40.0
+margin_bottom = 196.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Button0" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_left = 56.0
+margin_top = 156.0
+margin_right = 96.0
+margin_bottom = 196.0
+rect_min_size = Vector2( 40, 40 )
+text = "0"
+
+[node name="ButtonOK" type="Button" parent="Margin/VBox/Buttons/Grid"]
+margin_left = 112.0
+margin_top = 156.0
+margin_right = 152.0
+margin_bottom = 196.0
+rect_min_size = Vector2( 40, 40 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "OK"
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="TwoToneSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[node name="ThreeToneSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 10 )
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

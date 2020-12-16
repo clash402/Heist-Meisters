@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/night-vision-off.ogg-b455dac029d66e4bdb0303a3d2a1f038.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/night-vision-off.ogg"
+dest_files=[ "res://.import/night-vision-off.ogg-b455dac029d66e4bdb0303a3d2a1f038.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
